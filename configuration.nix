@@ -9,7 +9,7 @@ in {
 
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-label/NIXOS_SD";
+      device = "/dev/disk/by-id/usb-JMicron_Tech_DD564198838C4-0:0";
       fsType = "ext4";
       options = [ "noatime" ];
     };
