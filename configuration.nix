@@ -16,8 +16,7 @@ in {
   };
 
   networking.hostName = hostname;
-  networking.interfaces.eth0.useDHCP = true;
-
+  
   environment.systemPackages = with pkgs; [ nano docker docker-compose ];
 
   services.openssh.enable = true;
