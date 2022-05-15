@@ -17,7 +17,7 @@ in {
 
   networking.hostName = hostname;
   
-  environment.systemPackages = with pkgs; [ nano docker docker-compose ];
+  environment.systemPackages = with pkgs; [ zsh nano docker docker-compose ];
 
   services.openssh.enable = true;
 
@@ -26,9 +26,11 @@ in {
     users."${user}" = {
       isNormalUser = true;
       password = password;
+      shell = pkgs.zsh;
       extraGroups = [ "wheel" "docker"];
     };
   };
+  users.defaultUserShell = pkgs.zsh;
 
   # Set your time zone.
   time.timeZone = "Europe/Helsinki";
@@ -45,6 +47,9 @@ in {
 
   # Enable the Docker service.
   virtualisation.docker.enable = true;
+  
+  # Enable ZSH shell
+  programs.zsh.enable = true;
   
   system.stateVersion = "21.05";
 }
