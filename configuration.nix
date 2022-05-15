@@ -30,7 +30,6 @@ in {
       extraGroups = [ "wheel" "docker"];
     };
   };
-  users.defaultUserShell = pkgs.zsh;
 
   # Set your time zone.
   time.timeZone = "Europe/Helsinki";
