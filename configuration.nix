@@ -46,4 +46,6 @@ in {
 
   # Enable the Docker service.
   virtualisation.docker.enable = true;
+  
+  system.stateVersion = "21.05";
 }
